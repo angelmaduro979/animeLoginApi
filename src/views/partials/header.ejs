@@ -1,0 +1,14 @@
+
+    
+    <header>
+        <a href="/"><img src="CrunchyrollLogo.png" class="logo"></a>
+        <% if (loginVerification.logged) { %>
+
+            <h2>Hi, <%=loginVerification.name%> Welcome to your dashboard!</h2>
+            <a href="/logout">Log out</a>
+        
+        <%} else {%>
+            <h2>Hi, <%=loginVerification.name%></h2>
+            <a href="/login">Log in</a>
+        <%}%>     
+    </header>

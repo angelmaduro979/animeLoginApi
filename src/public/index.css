@@ -1,0 +1,23 @@
+
+:root {
+    --main-color: #000000;
+    --secondary-color: #F47521;
+    --secondary-color-hover: #ef8f50;
+    --tertiary-color: #141519;
+    --quaternary-color: #23252B;
+    --quinary-color: #8E8C9C;
+    --Other-color: #59595B;
+    --Other-color-1:#A0A0A0;
+    --font-color: #FFFFFF;
+    --font-family: "Lato";
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.containerIndex{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

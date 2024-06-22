@@ -1,0 +1,695 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+
+:root {
+    --main-color: #000000;
+    --secondary-color: #F47521;
+    --secondary-color-hover: #ef8f50;
+    --tertiary-color: #141519;
+    --quaternary-color: #23252B;
+    --quinary-color: #8E8C9C;
+    --Other-color: #59595B;
+    --Other-color-1:#A0A0A0;
+    --font-color: #FFFFFF;
+    --font-family: "Lato";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    background-image: url('./crunchyBackground.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: var(--font-family);
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    height: max-content;
+    padding: 15px 15px;
+    background-color: var(--quaternary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header a {
+    text-transform: none;
+}
+
+header .logo {
+    width: 140px;
+    filter: 1s ease-in-out,
+}
+
+header .logo:hover {
+    width: 155px;
+    color: var(--secondary-color-hover);
+    filter: brightness(0) invert(1);
+    ;
+
+}
+
+/* Login */
+
+.containerSectionLogin {
+
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 40px;
+
+}
+
+.containerLogin {
+
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.containerLogin h3 {
+    font-size: 34px;
+    font-weight: 500;
+    font-variant: normal;
+    font-style: normal;
+    vertical-align: baseline;
+    letter-spacing: normal;
+    word-spacing: 0px;
+    padding: 0 0 30px 0;
+
+}
+
+.containerLogin .loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.containerLogin .loginForm .inputClass {
+
+    background-color: var(--tertiary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    padding: 50px 50px;
+}
+
+.containerLogin .loginForm .inputClass .passwordContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+}
+
+.containerLogin .loginForm .inputClass input {
+    width: 400px;
+    font-size: 1.125rem;
+    padding: 9px 0 9px 0;
+    background-color: var(--tertiary-color);
+    border: none;
+    border-bottom: 2px solid var(--Other-color);
+    color: var(--font-color);
+}
+
+.containerLogin .loginForm .inputClass input:focus {
+    border-bottom: 2px solid var(--secondary-color);
+    outline: none;
+}
+
+.inputClass .passwordContainer .showed{
+    position: absolute;
+    border: none;
+    background: none;
+    color: #A0A09C;
+    font-size: 12px;
+    font-weight: 700;
+    right: 10px;
+    top: 10px;
+    line-height:16px;
+    display: block;
+}
+
+.inputClass .passwordContainer .showed:hover{
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.inputClass .passwordContainer .hidden{
+    display: none;
+}
+
+.containerLogin .loginForm .inputClass input::placeholder {
+    color: var(--font-color);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.passwordContainer .forgotLink {
+    text-decoration: none;
+    color: var(--quinary-color);
+    font-size: 12px;
+    font-weight: 900;
+    width: max-content;
+}
+
+.passwordContainer .forgotLink:hover {
+    cursor: pointer;
+    color: var(--font-color);
+}
+
+ .buttonContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+ .buttonContainer .buttonLogInOn {
+    width: 110px;
+    height: 40px;
+    font-weight: bolder;
+    background-color: var(--secondary-color);
+    font-size: 14px;
+    border: none;
+}
+
+.buttonContainer .buttonLogInOn:hover {
+    background-color: var(--secondary-color-hover);
+    cursor: pointer;
+}
+
+.buttonContainer .buttonLogInOff{
+    width: 110px;
+    height: 40px;
+    font-weight: bold;
+    background-color: var(--main-color);
+    font-size: 14px;
+    border: 2px solid var(--Other-color);
+    color: var(--Other-color);
+}
+
+.containerLogin .loginForm .buttonContainer .buttonLogInOff:hover{
+    cursor: pointer;
+}
+
+
+
+
+.containerLogin span a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+.containerLogin span a:hover{
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.picture {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: start;
+}
+
+.picture .loginPicture {
+    position: absolute;
+    width: 11.625rem;
+    bottom: -105px;
+    right: 205px;
+    ;
+    z-index: 5;
+}
+
+.picture .catPicture {
+    position: absolute;
+    top: -10px;
+    left: 250px;
+    height: 120px;
+}
+
+/*register*/
+
+.containerRegister {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.containerSectionRegister {
+
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex: 1;
+    width: 100%;
+}
+
+.containerSectionRegister .containerRegisterForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    max-width: 855px;
+}
+
+.containerSectionRegister .containerRegisterForm h3{
+    font-size: 34px;
+    font-weight: 500px;
+    margin-bottom: 40px;
+}
+
+.containerSectionRegister .containerRegisterForm form{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.containerSectionRegister .containerRegisterForm form .formContainer{
+    
+    display: flex;
+    flex-direction: column;
+    padding: 50px 80px 50px 80px;
+    background-color: var(--tertiary-color);
+    gap: 20px;
+}
+
+
+
+.containerSectionRegister .containerRegisterForm form .formContainer input{
+    
+    font-size: 1.125rem;
+    padding: 9px 0 9px 0;
+    background-color: var(--tertiary-color);
+    border: none;
+    border-bottom: 2px solid var(--Other-color);
+    color: var(--font-color);
+}
+
+.formContainer .nameAndUser, .formContainer .emailAndPhone{
+    display: flex;
+    width: 100%;   
+    justify-content: space-between;
+   
+}
+
+.formContainer .nameAndUser input, .formContainer .emailAndPhone input{
+    width: 220px;
+}
+
+.containerSectionRegister .containerRegisterForm form .formContainer input::placeholder{
+   color: var(--font-color);
+   font-size: 18px;
+}
+
+.containerSectionRegister .containerRegisterForm form .formContainer input:focus{
+    border-bottom: 2px solid var(--secondary-color);
+    outline: none;
+}
+
+/* Show and Hide Button */
+
+.passwordMessage .showButton{
+    position: absolute;
+    bottom: 48px;
+    right: 8px;
+    border: none;
+    background: none;
+    color: #A0A09C;
+    font-size: 12px;
+    font-weight: 900;
+    line-height:16px;
+    display: block;
+}
+
+.passwordMessage .showButton:hover{
+    color:var(--font-color) ;
+    cursor: pointer;
+}
+
+.passwordMessage .hideButton{
+    display: none;
+}
+
+
+
+/* Password meter */
+
+/* Excellent password */
+
+.passwordMessage{
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+
+.passwordMessage .greenMessage{
+    font-size: 13px;
+    font-weight: 600;
+    color: #8DDC9E;
+}
+
+.passwordMessage .bars{
+    display: flex;
+    width: max-content;
+    gap: .125rem;
+    align-items: center;
+}
+
+.passwordMessage .bars .bar{
+    width: 16px;
+    height: 4px;
+    background-color: #8DDC9E;
+}
+
+/* Weak password */
+
+.passwordMessage .messageRed{
+    font-size: 13px;
+    font-weight:600;
+    color: #EF4323
+}
+
+.passwordMessage .grayMessage{
+    font-size: 13px;
+    font-weight:600;
+    color: var(--Other-color-1)
+}
+
+.passwordMessage .bars .redBar{
+    width: 16px;
+    height: 4px;
+    background-color: #EF4323;
+}
+
+.passwordMessage .bars .grayBar{
+    width: 16px;
+    height: 4px;
+    background-color: var(--Other-color-1);
+}
+
+.formContainer .checkBoxContainer{
+    margin: 20px;
+  
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 16px;
+    color: var(--Other-color-1);
+}
+
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.custom-checkbox .checkmark {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #192E38;
+    border:2px solid var(--Other-color-1);
+}
+
+.custom-checkbox .checkmark:hover{
+    border:2px solid var(--font-color);
+}
+/*Selected checkmark Style*/
+.custom-checkbox input:checked + .checkmark {
+    
+    border: 2px solid #2ABDBB;
+}
+
+.custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox:hover{
+    cursor: pointer;
+    color: var(--font-color);
+}
+
+.custom-checkbox input:checked + .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: 12px;
+    border: solid #2ABDBB;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox .checkbox-text {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.custom-checkbox .checkbox-text a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.custom-checkbox .checkbox-text a:hover {
+    color: var(--font-color);
+}
+
+.containerSectionRegister .containerRegisterForm form .textTandC{
+    font-size: 12px;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    font-weight: 600;
+    color: var(--Other-color-1);   
+    line-height: 16px;
+}
+
+.containerSectionRegister .containerRegisterForm form .textTandC a{
+    color: var(--Other-color-1);
+}
+
+.containerSectionRegister .containerRegisterForm form .textTandC a:hover{
+    color: var(--font-color);
+}
+.buttonContainerRegister {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+ .buttonContainerRegister .buttonRegisterOn {
+    width: max-content;
+    padding: 10px 20px 10px 20px;
+    height: max-content;
+    font-weight: bolder;
+    background-color: var(--secondary-color);
+    font-size: 14px;
+    border: none;
+}
+
+.buttonContainerRegister .buttonRegisterOn:hover {
+    background-color: var(--secondary-color-hover);
+    cursor: pointer;
+}
+
+.buttonContainerRegister .buttonRegisterOff{
+    width: max-content;
+    padding: 10px 20px 10px 20px;
+    height: max-content;
+    font-weight: bold;
+    background-color: var(--main-color);
+    font-size: 14px;
+    border: 2px solid var(--Other-color);
+    color: var(--Other-color);
+}
+
+ .buttonContainerRegister .buttonRegisterOff:hover{
+    cursor: pointer;
+}
+
+.containerRegisterForm .loginButton{
+    font-size:16px;
+    font-weight: 500;
+    
+}
+
+.containerRegisterForm .loginButton a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--secondary-color);
+}
+
+.containerRegisterForm .loginButton a:hover{
+    color: var(--secondary-color-hover);
+}
+
+.containerRegisterForm .registerGirlPic{
+    position: absolute;
+    top: 50px;
+    left: 8px;
+    height: 500px;
+}
+
+.containerRegisterForm .registerCatPic{
+    position: absolute;
+    top: 44px;
+    right: 80px;
+    height: 70px;
+    display: block;
+    
+}
+
+/* footer */
+
+footer {
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+
+
+}
+
+footer .container1 {
+    width: max-content;
+    height: max-content;
+    padding-bottom: 20px;
+
+}
+
+footer .container1 ul {
+    list-style: none;
+    display: flex;
+}
+
+footer .container1 ul li {
+    padding: 0 20px 0 20px;    
+}
+
+
+footer .container1 ul .midLi {
+    border-right: 1px solid var(--quinary-color);
+    border-left: 1px solid var(--quinary-color);
+
+}
+
+footer .container1 ul li a {
+    text-decoration: none;
+    color: #A0A0A0;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+footer .container1 ul li a:hover{
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+footer .container2 {
+    border-top: 1px solid #4a4e58;
+    width: 70%;
+    padding: 40px 0 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerLeft {
+    display: flex;
+    align-items: center;
+}
+
+.sonyLogoContainer {
+    margin-block: 0;
+    margin-inline-end: -.25rem;
+    padding: 0 15px 0 0;
+}
+
+path[Attributes Style] {
+    d: path("M 1.066 8.446 c 0.658 0.88 1.756 2.327 5.173 2.327 c 1.757 0 4.155 -0.503 4.155 -2.28 c 0 -3.476 -9.94 -0.425 -9.94 -5.065 C 0.455 0.991 2.697 0 5.802 0 c 3.01 0 4.86 1.242 5.644 2.343 l -1.004 0.818 c -0.47 -0.535 -1.568 -1.997 -4.671 -1.997 c -2.29 0 -3.905 0.597 -3.905 2.044 c 0 3.46 9.94 0.158 9.94 5.285 c 0 1.918 -1.85 3.507 -5.722 3.507 C 2.352 12 0.972 10.443 0 9.358 l 1.066 -0.912 m 18.843 2.327 c 2.775 0 5.268 -1.478 5.268 -4.954 c 0 -2.548 -1.96 -4.655 -5.268 -4.655 s -5.268 2.107 -5.268 4.655 c 0 3.476 2.462 4.954 5.268 4.954 Z M 19.91 0 c 3.872 0 6.679 2.265 6.679 6.07 c 0 4.058 -3.387 5.93 -6.679 5.93 c -3.292 0 -6.679 -1.872 -6.679 -5.93 c 0 -3.805 2.807 -6.07 6.68 -6.07 Z m 8.496 0.283 h 1.96 l 8.481 9.405 V 0.283 h 1.38 v 11.434 h -1.38 L 29.722 1.51 v 10.207 h -1.317 V 0.283 m 19.58 6.81 l -5.88 -6.81 h 1.804 l 4.766 5.583 L 53.44 0.283 h 1.803 l -5.88 6.81 v 4.624 h -1.38 V 7.093 m 16.178 -1.478 H 69.1 c 2.29 0 3.45 -0.488 3.45 -2.045 c 0 -1.573 -1.16 -2.06 -3.45 -2.06 h -4.938 v 4.105 Z M 62.782 0.283 h 6.679 c 2.305 0 4.405 0.66 4.405 3.271 c 0 2.627 -2.1 3.287 -4.405 3.287 h -5.3 v 4.876 h -1.379 V 0.283 Z m 13.043 11.434 h 1.38 V 0.283 h -1.38 v 11.434 Z m 16.21 -3.036 C 90.812 11.056 88.695 12 85.92 12 c -4.42 0 -6.506 -2.658 -6.506 -5.977 c 0 -3.931 2.65 -6.023 6.491 -6.023 c 2.446 0 4.938 0.944 5.957 3.271 l -1.191 0.55 c -0.8 -1.871 -2.571 -2.657 -4.75 -2.657 c -3.261 0 -5.096 1.777 -5.096 5.032 c 0 2.627 1.772 4.577 5.221 4.577 c 2.258 0 3.825 -0.944 4.766 -2.69 l 1.223 0.598 m 6.27 -7.171 h -5.503 V 0.283 h 12.385 V 1.51 h -5.503 v 10.207 h -1.38 V 1.51 m 20.474 5.504 c 0 4.137 -3.214 4.986 -5.863 4.986 c -2.65 0 -5.863 -0.85 -5.863 -4.986 V 0.284 h 1.38 v 6.73 c 0 2.627 1.677 3.822 4.483 3.822 c 2.806 0 4.484 -1.195 4.484 -3.822 V 0.284 h 1.38 v 6.73 m 4.012 -1.588 h 4.89 c 1.992 0 3.481 -0.283 3.481 -1.966 c 0 -1.667 -1.49 -1.95 -3.48 -1.95 h -4.891 v 3.916 Z M 121.41 0.283 h 6.584 c 1.82 0 4.484 0.393 4.484 3.193 c 0 2.39 -2.21 3.082 -3.59 3.145 l 3.763 5.096 h -1.71 l -3.668 -5.065 h -4.483 v 5.065 h -1.38 V 0.283 Z m 13.544 0 h 10.16 V 1.51 h -8.78 v 3.648 h 7.337 v 1.227 h -7.337 v 4.105 h 8.967 v 1.227 h -10.347 V 0.283 m 12.306 8.163 c 0.658 0.88 1.756 2.327 5.173 2.327 c 1.756 0 4.155 -0.503 4.155 -2.28 c 0 -3.476 -9.94 -0.425 -9.94 -5.065 C 146.65 0.991 148.891 0 151.995 0 c 3.01 0 4.86 1.242 5.644 2.343 l -1.003 0.818 c -0.47 -0.535 -1.568 -1.997 -4.672 -1.997 c -2.29 0 -3.904 0.597 -3.904 2.044 c 0 3.46 9.94 0.158 9.94 5.285 c 0 1.918 -1.85 3.507 -5.722 3.507 c -3.732 0 -5.111 -1.557 -6.084 -2.642 l 1.067 -0.912");
+    fill: rgb(160, 160, 160);
+    fill-rule: nonzero;
+}
+
+.containerLeft span {
+    padding: 0 15px 0 10px;
+    border-left: 1px solid var(--quinary-color);
+    color: var(--quinary-color);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.container2 .containerRight{
+    color: var(--quinary-color);
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.container2 .containerRight .language{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
