@@ -1,51 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
 </head>
+
 <body>
     <div class="containerIndex">
+
         <%- include('./partials/header.ejs') %>
-        <h1>Anime List Demo</h1>
-        <% if (animeListObject && animeListObject.animeList && animeListObject.animeList.length > 0) { %>
-            <ul>
-                <% animeListObject.animeList.forEach(anime => { %>
-                    <li>
-                        <a href="/anime/<%= anime.id %>"><%= anime.title %></a>
-                        <img src="<%= anime.cover_image_url %>" alt="<%= anime.title %>">
-                    </li>
-                <% }) %>
+
+        <div class="toggleBoxContainer">
+            <ul class="usernameBox">
+                <% if (loginVerification.logged) { %>
+                <li class="welcome">
+                    <h4>
+                        <%=loginVerification.name%>
+                    </h4>
+                    <span><i class="fa-solid fa-crown"></i> Welcome!</span>
+                </li>
+                <li class="logoutIcon"><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+                <%} else {%>
+                
+                    <li class="messageLogin"><%=loginVerification.name%></li>
+                    <li class="loginIcon"><a href="/login"><i class="fa-solid fa-right-to-bracket"></i> Log in</a></li>
+        
+                <%}%>
+        
             </ul>
-        <% } else { %>
-            <p>No anime data available</p>
-        <% } %>
+        </div>
+
+            <main class="overflowMain" style="<%= loginVerification.logged ? 'display: flex;' : 'display: none;' %>">
+                <div class="animeSlider">
+                    <div class="anime">
+
+
+                        <img src="/slider/Naruto1.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers">
+                                    <img src="/slider/logo/Naruto.png" alt="" class="logoAnime" id="naruto">
+                                </div>
+                                <span>
+
+                                    Moments before Naruto Uzumaki's birth, a huge demon known as the Nine-Tailed Fox
+                                    attacked Konohagakure, the Hidden Leaf Village, and wreaked havoc. In order to
+                                    put
+                                    an end to the demon's rampage...
+
+                                </span>
+                                <a href="/animeDetails/20"><i class="fa-brands fa-readme"></i> Read More </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/One_Piece.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers" id="onePieceContainer">
+                                    <img src="/slider/logo/one piece.webp" alt="" class="logoAnime" id="onePiece">
+                                </div>
+                                <span>
+                                    Barely surviving in a barrel after passing through a terrible whirlpool at sea,
+                                    carefree Monkey D. Luffy ends up aboard a ship under attack by fearsome pirates.
+                                    Despite being a naive-looking teenager...
+                                </span>
+
+                                <a href="/animeDetails/21"><i class="fa-brands fa-readme"></i>Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/cowboy.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers" id="cowboyContainer">
+                                    <img src="/slider/logo/Cowboy Bebop.png" alt="" class="logoAnime" id="cowboy">
+                                </div>
+                                <span>
+
+                                    Crime is timeless. By the year 2071, humanity has expanded across the galaxy,
+                                    filling the surface of other planets with settlements like those on Earth. These
+                                    new
+                                    societies are plagued by murder, drug use, and theft, and intergalactic outlaws
+                                    are
+                                    hunted by a growing number ...
+
+                                </span>
+                                <a href="/animeDetails/1"><i class="fa-brands fa-readme"></i> Read More </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/Tengoku_no_Tobira.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers" id="cowboyTwoContainer">
+                                    <img src="/slider/logo/Cowboy-Bebop.webp" alt="" class="logoAnime" id="cowboyTwo">
+                                </div>
+                                <span>
+
+                                    Another day, another bounty—such is the life of the often unlucky crew of the
+                                    Bebop.
+                                    However, this routine is interrupted when Faye, who is chasing a fairly
+                                    worthless
+                                    target on Mars, witnesses an oil tanker suddenly explode, causing mass hysteria.
+                                    As
+                                    casualties mount due to ...
+                                </span>
+                                <a href="/animeDetails/5"><i class="fa-brands fa-readme"></i> Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/Trigun.webp" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+
+                                <div class="logoContainers">
+                                    <img src="/slider/logo/triguns.png" alt="" class="logoAnime" id="trigun">
+
+                                </div>
+
+                                <span>
+                                    Vash the Stampede is the man with a $$60,000,000,000 bounty on his head. The
+                                    reason:
+                                    he's a merciless villain who lays waste to all those that oppose him and
+                                    flattens
+                                    entire cities for fun, garnering him the title "The Humanoid Typhoon." He leaves
+                                    a
+                                    trail of death and destruction wherever ...
+                                </span>
+                                <a href="/animeDetails/6"><i class="fa-brands fa-readme"></i> Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/Witch_Hunter_Robin.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers">
+                                    <img src="/slider/logo/Witch Hunter Robin.png" alt="" class="logoAnime" id="witch">
+                                </div>
+                                <span>
+                                    Robin Sena is a powerful craft user drafted into the STNJ—a group of specialized
+                                    hunters that fight deadly beings known as Witches. Though her fire power is
+                                    great,
+                                    she's got a lot to learn about her powers and working with her cool and aloof
+                                    partner, Amon. But the truth about the ...
+
+                                </span>
+                                <a href="/animeDetails/7"><i class="fa-brands fa-readme"></i>Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/Bouken_Ou_Beet.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers">
+                                    <img src="/slider/logo/Bouken Ou Beet.png" alt="" class="logoAnime" id="beet">
+                                </div>
+                                <span>
+                                    It is the dark century and the people are suffering under the rule of the devil,
+                                    Vandel, who is able to manipulate monsters. The Vandel Busters are a group of
+                                    people
+                                    who hunt these devils, and among them, the Zenon Squad is known to be the
+                                    strongest
+                                    busters on the continent...
+
+
+                                </span>
+                                <a href="/animeDetails/8"><i class="fa-brands fa-readme"></i> Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+                        <img src="/slider/Eyeshield_21.jpeg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers">
+                                    <img src="/slider/logo/Eyeshield 21.png" alt="" class="logoAnime" id="eyeshield">
+                                </div>
+                                <span>
+                                    Shy, reserved, and small-statured, Deimon High School student Sena Kobayakawa is
+                                    the
+                                    perfect target for bullies. However, as a result of running errands throughout
+                                    his
+                                    life, Sena has become agile and developed a skill for avoiding crowds of people.
+                                    After the cunning ...
+
+                                </span>
+                                <a href="/animeDetails/15"><i class="fa-brands fa-readme"></i>Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="anime">
+
+
+                        <img src="/slider/Tennis_no_Oujisama.jpg" alt="">
+                        <div class="opacity">
+                            <div class="synopsis">
+
+                                <div class="logoContainers">
+                                    <img src="/slider/logo/Tennis no Oujisama.avif" alt="" class="logoAnime"
+                                        id="tennis">
+                                </div>
+                                <span>
+                                    At the request of his father, tennis prodigy Ryouma Echizen has returned from
+                                    America and is ready to take the Japanese tennis scene by storm. Aiming to
+                                    become
+                                    the best tennis player in the country, he enrolls in Seishun Academy—home to one
+                                    of
+                                    the best middle school tennis teams in Japan. After Ryouma catches the captain's
+                                    eye, he finds himself playing for ...
+                                </span>
+                                <a href="/animeDetails/22"><i class="fa-brands fa-readme"></i>Read More</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="leftAndRight">
+                    <i class="bi bi-chevron-left" id="left"></i>
+                    <i class="bi bi-chevron-right" id="right"></i>
+                </div>
+
+            </main>
+
+            <section class="animeSection" style="<%= loginVerification.logged ? 'display: flex;' : 'display: none;' %>">
+                <h1>Anime List Demo</h1>
+                <% if (animeList && animeList.length> 0) { %>
+                    <ul class="animeListContainer">
+                        <% animeList.forEach(anime=> { %>
+                            <li>
+
+                                <h2>
+                                    <%= anime.title %>
+                                </h2>
+                                <a href="/animeDetails/<%= anime.mal_id%>">
+                                    <% if (anime.images?.jpg?.image_url){ %>
+                                        <img src="<%= anime.images.jpg.image_url %>" alt="<%= anime.title %>">
+
+                                        <% } else { %>
+                                            <p>No image available</p>
+                                            <% } %>
+                                </a>
+                            </li>
+                            <% }) %>
+                    </ul>
+                    <% } %>
+            </section>
+
+
+            <section class="loginSection" style="<%= loginVerification.logged ? 'display: none;' : 'display: flex;' %>">
+                <img src="cat.png" alt="" class="CatPic2">
+                <div class="containerNotLogin">
+
+                    <div class="subContainer">
+                        <span>
+                            <%=loginVerification.name%>
+                        </span>
+                        <i class="fa-solid fa-robot"></i>
+                        <img src="registerCrunchyCat.webp" alt="" class="CatPic">
+                        
+                    </div>
+                </div>
+            </section>
+
+
+
     </div>
 
     <%- include("./partials/footer.ejs") %>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
-    <script src="/script/script.js"></script>
-    <% if(typeof alert !='undefined' ){ %>
-        <script>
-            Swal.fire({
-                alert: '<%= alert %>',
-                title: '<%= title %>',
-                icon: '<%= icon %>',
-                text: '<%= text %>',
-                timer: <%= timer %>,
-                position: '<%= position %>',
-                confirmButtonText: 'Cool',
-                confirmButtonColor: '#F4761B',
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+        <script src="/script/index.js"></script>
+        <script src="/script/script.js"></script>
+        <% if(typeof alert !='undefined' ){ %>
+            <script>
+                Swal.fire({
+                    alert: '<%= alert %>',
+                    title: '<%= title %>',
+                    icon: '<%= icon %>',
+                    text: '<%= text %>',
+                    timer: <%= timer %>,
+                    position: '<%= position %>',
+                    confirmButtonText: 'Cool',
+                    confirmButtonColor: '#F4761B',
             }).then(() => {
-                window.location = '/<%= rout %>';
-            });
-        </script>
-    <% } %>
+                        window.location = '/<%= rout %>';
+                    });
+            </script>
+            <% } %>
+
+
 </body>
+
 </html>

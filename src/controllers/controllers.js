@@ -83,7 +83,7 @@ controllers.loginPost = (req, res) => {
                             })
                         } else {
                             req.session.loggedSuccessfully = true;
-                            req.session.name = results[0].name;
+                            req.session.user = results[0].user;
                             res.render('login.ejs', {
                                 alert: true,
                                 title: 'Welcome!',
@@ -112,42 +112,74 @@ controllers.loginPost = (req, res) => {
 }
 //API CONNECTION
 
-const { getAnimeListAndCharacters, getAnimeDetailsById } = require('../services/apiService');
-
-
+const axios = require('axios');
 
 controllers.getAnimeList = async (req, res) => {
     try {
-        const animeListObject = { animeList: [] };
+
         const loginVerification = { logged: false, name: '' };
 
         if (req.session.loggedSuccessfully) {
             console.log('User is logged in, fetching anime list...');
-            // Llamar al servicio para obtener la lista de animes con sus personajes
-            const animeList = await getAnimeListAndCharacters();
-            console.log("Anime list to be rendered: ", animeList)
-            animeListObject.animeList = animeList; // Asignar la lista obtenida al objeto animeListObject
+            const animeUrl = 'https://api.jikan.moe/v4/anime'; // Endpoint para obtener la lista de anime en la versión 4 de Jikan
+            const animeListInfo = await axios.get(animeUrl);
+
+            // Asumiendo que los datos del anime están en animeListInfo.data.data
+            var animeList = animeListInfo.data.data; // Asegurarse de que sea un arreglo
+
+            console.log("Number of anime:", animeList.length); // Muestra la longitud del arreglo de anime
 
             // Establecer la verificación de inicio de sesión como exitosa
             loginVerification.logged = true;
-            loginVerification.name = req.session.name;
+            loginVerification.name = req.session.user;
+
+
 
         } else {
             // Si no se ha iniciado sesión, configurar el mensaje de error
             loginVerification.name = 'You must log in!';
         }
 
+
+
         // Renderizar la plantilla index.ejs con los datos obtenidos
         res.render('index', {
-            animeListObject,
-            loginVerification
+            animeList,
+            loginVerification,
+
         });
 
     } catch (error) {
-        console.error('Error fetching anime list:', error);
+        console.error('Error fetching anime list:', error.response.data);
         res.status(500).send('Internal Server Error');
     }
 };
+
+
+
+
+controllers.getAnimeDetail = async (req, res) => {
+    const animeId = req.params.id;
+    console.log('Anime ID:', animeId);
+
+    try {
+        
+        // Access to the Jikan api
+        const response = await axios.get(`https://api.jikan.moe/v4/anime/${animeId}`);
+        const animeDetails = response.data.data;
+        console.log(`The animeDetails Info is: ${animeDetails}`)
+
+        // Renderizar la vista ejs con los detalles del anime
+        res.render('animeDetails', {
+            animeDetails,
+            
+        });
+    } catch (error) {
+        console.error('Error al obtener los detalles del anime:', error);
+        res.status(500).send('Error interno del servidor');
+    }
+};
+
 
 
 //DASHBOARD-INDEX

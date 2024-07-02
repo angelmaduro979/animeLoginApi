@@ -9,7 +9,7 @@
     --quaternary-color: #23252B;
     --quinary-color: #8E8C9C;
     --Other-color: #59595B;
-    --Other-color-1:#A0A0A0;
+    --Other-color-1: #A0A0A0;
     --font-color: #FFFFFF;
     --font-family: "Lato";
 }
@@ -56,7 +56,7 @@ header .logo {
 }
 
 header .logo:hover {
-    width: 155px;
+
     color: var(--secondary-color-hover);
     filter: brightness(0) invert(1);
     ;
@@ -74,6 +74,7 @@ header .logo:hover {
     flex-direction: column;
     flex: 1;
     margin-top: 40px;
+
 
 }
 
@@ -142,7 +143,7 @@ header .logo:hover {
     outline: none;
 }
 
-.inputClass .passwordContainer .showed{
+.inputClass .passwordContainer .showed {
     position: absolute;
     border: none;
     background: none;
@@ -151,16 +152,16 @@ header .logo:hover {
     font-weight: 700;
     right: 10px;
     top: 10px;
-    line-height:16px;
+    line-height: 16px;
     display: block;
 }
 
-.inputClass .passwordContainer .showed:hover{
+.inputClass .passwordContainer .showed:hover {
     color: var(--font-color);
     cursor: pointer;
 }
 
-.inputClass .passwordContainer .hidden{
+.inputClass .passwordContainer .hidden {
     display: none;
 }
 
@@ -183,7 +184,7 @@ header .logo:hover {
     color: var(--font-color);
 }
 
- .buttonContainer {
+.buttonContainer {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -191,7 +192,7 @@ header .logo:hover {
     margin-bottom: 15px;
 }
 
- .buttonContainer .buttonLogInOn {
+.buttonContainer .buttonLogInOn {
     width: 110px;
     height: 40px;
     font-weight: bolder;
@@ -205,7 +206,7 @@ header .logo:hover {
     cursor: pointer;
 }
 
-.buttonContainer .buttonLogInOff{
+.buttonContainer .buttonLogInOff {
     width: 110px;
     height: 40px;
     font-weight: bold;
@@ -215,11 +216,9 @@ header .logo:hover {
     color: var(--Other-color);
 }
 
-.containerLogin .loginForm .buttonContainer .buttonLogInOff:hover{
+.containerLogin .loginForm .buttonContainer .buttonLogInOff:hover {
     cursor: pointer;
 }
-
-
 
 
 .containerLogin span a {
@@ -228,7 +227,8 @@ header .logo:hover {
     font-size: 14px;
     color: var(--secondary-color);
 }
-.containerLogin span a:hover{
+
+.containerLogin span a:hover {
     color: var(--font-color);
     cursor: pointer;
 }
@@ -277,7 +277,7 @@ header .logo:hover {
     width: 100%;
 }
 
-.containerSectionRegister .containerRegisterForm{
+.containerSectionRegister .containerRegisterForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -287,24 +287,24 @@ header .logo:hover {
     max-width: 855px;
 }
 
-.containerSectionRegister .containerRegisterForm h3{
+.containerSectionRegister .containerRegisterForm h3 {
     font-size: 34px;
     font-weight: 500px;
     margin-bottom: 40px;
 }
 
-.containerSectionRegister .containerRegisterForm form{
-    
+.containerSectionRegister .containerRegisterForm form {
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    
+
 }
 
-.containerSectionRegister .containerRegisterForm form .formContainer{
-    
+.containerSectionRegister .containerRegisterForm form .formContainer {
+
     display: flex;
     flex-direction: column;
     padding: 50px 80px 50px 80px;
@@ -314,8 +314,8 @@ header .logo:hover {
 
 
 
-.containerSectionRegister .containerRegisterForm form .formContainer input{
-    
+.containerSectionRegister .containerRegisterForm form .formContainer input {
+
     font-size: 1.125rem;
     padding: 9px 0 9px 0;
     background-color: var(--tertiary-color);
@@ -324,30 +324,32 @@ header .logo:hover {
     color: var(--font-color);
 }
 
-.formContainer .nameAndUser, .formContainer .emailAndPhone{
+.formContainer .nameAndUser,
+.formContainer .emailAndPhone {
     display: flex;
-    width: 100%;   
+    width: 100%;
     justify-content: space-between;
-   
+
 }
 
-.formContainer .nameAndUser input, .formContainer .emailAndPhone input{
+.formContainer .nameAndUser input,
+.formContainer .emailAndPhone input {
     width: 220px;
 }
 
-.containerSectionRegister .containerRegisterForm form .formContainer input::placeholder{
-   color: var(--font-color);
-   font-size: 18px;
+.containerSectionRegister .containerRegisterForm form .formContainer input::placeholder {
+    color: var(--font-color);
+    font-size: 18px;
 }
 
-.containerSectionRegister .containerRegisterForm form .formContainer input:focus{
+.containerSectionRegister .containerRegisterForm form .formContainer input:focus {
     border-bottom: 2px solid var(--secondary-color);
     outline: none;
 }
 
 /* Show and Hide Button */
 
-.passwordMessage .showButton{
+.passwordMessage .showButton {
     position: absolute;
     bottom: 48px;
     right: 8px;
@@ -356,16 +358,16 @@ header .logo:hover {
     color: #A0A09C;
     font-size: 12px;
     font-weight: 900;
-    line-height:16px;
+    line-height: 16px;
     display: block;
 }
 
-.passwordMessage .showButton:hover{
-    color:var(--font-color) ;
+.passwordMessage .showButton:hover {
+    color: var(--font-color);
     cursor: pointer;
 }
 
-.passwordMessage .hideButton{
+.passwordMessage .hideButton {
     display: none;
 }
 
@@ -375,7 +377,7 @@ header .logo:hover {
 
 /* Excellent password */
 
-.passwordMessage{
+.passwordMessage {
 
     display: flex;
     justify-content: space-between;
@@ -384,20 +386,20 @@ header .logo:hover {
 }
 
 
-.passwordMessage .greenMessage{
+.passwordMessage .greenMessage {
     font-size: 13px;
     font-weight: 600;
     color: #8DDC9E;
 }
 
-.passwordMessage .bars{
+.passwordMessage .bars {
     display: flex;
     width: max-content;
     gap: .125rem;
     align-items: center;
 }
 
-.passwordMessage .bars .bar{
+.passwordMessage .bars .bar {
     width: 16px;
     height: 4px;
     background-color: #8DDC9E;
@@ -405,33 +407,33 @@ header .logo:hover {
 
 /* Weak password */
 
-.passwordMessage .messageRed{
+.passwordMessage .messageRed {
     font-size: 13px;
-    font-weight:600;
+    font-weight: 600;
     color: #EF4323
 }
 
-.passwordMessage .grayMessage{
+.passwordMessage .grayMessage {
     font-size: 13px;
-    font-weight:600;
+    font-weight: 600;
     color: var(--Other-color-1)
 }
 
-.passwordMessage .bars .redBar{
+.passwordMessage .bars .redBar {
     width: 16px;
     height: 4px;
     background-color: #EF4323;
 }
 
-.passwordMessage .bars .grayBar{
+.passwordMessage .bars .grayBar {
     width: 16px;
     height: 4px;
     background-color: var(--Other-color-1);
 }
 
-.formContainer .checkBoxContainer{
+.formContainer .checkBoxContainer {
     margin: 20px;
-  
+
 }
 
 .custom-checkbox {
@@ -460,15 +462,16 @@ header .logo:hover {
     height: 20px;
     width: 20px;
     background-color: #192E38;
-    border:2px solid var(--Other-color-1);
+    border: 2px solid var(--Other-color-1);
 }
 
-.custom-checkbox .checkmark:hover{
-    border:2px solid var(--font-color);
+.custom-checkbox .checkmark:hover {
+    border: 2px solid var(--font-color);
 }
+
 /*Selected checkmark Style*/
-.custom-checkbox input:checked + .checkmark {
-    
+.custom-checkbox input:checked+.checkmark {
+
     border: 2px solid #2ABDBB;
 }
 
@@ -478,12 +481,12 @@ header .logo:hover {
     display: none;
 }
 
-.custom-checkbox:hover{
+.custom-checkbox:hover {
     cursor: pointer;
     color: var(--font-color);
 }
 
-.custom-checkbox input:checked + .checkmark:after {
+.custom-checkbox input:checked+.checkmark:after {
     display: block;
 }
 
@@ -511,22 +514,23 @@ header .logo:hover {
     color: var(--font-color);
 }
 
-.containerSectionRegister .containerRegisterForm form .textTandC{
+.containerSectionRegister .containerRegisterForm form .textTandC {
     font-size: 12px;
     text-align: center;
     margin: 10px 0 20px 0;
     font-weight: 600;
-    color: var(--Other-color-1);   
+    color: var(--Other-color-1);
     line-height: 16px;
 }
 
-.containerSectionRegister .containerRegisterForm form .textTandC a{
+.containerSectionRegister .containerRegisterForm form .textTandC a {
     color: var(--Other-color-1);
 }
 
-.containerSectionRegister .containerRegisterForm form .textTandC a:hover{
+.containerSectionRegister .containerRegisterForm form .textTandC a:hover {
     color: var(--font-color);
 }
+
 .buttonContainerRegister {
     width: 100%;
     display: flex;
@@ -535,7 +539,7 @@ header .logo:hover {
     margin-bottom: 15px;
 }
 
- .buttonContainerRegister .buttonRegisterOn {
+.buttonContainerRegister .buttonRegisterOn {
     width: max-content;
     padding: 10px 20px 10px 20px;
     height: max-content;
@@ -550,7 +554,7 @@ header .logo:hover {
     cursor: pointer;
 }
 
-.buttonContainerRegister .buttonRegisterOff{
+.buttonContainerRegister .buttonRegisterOff {
     width: max-content;
     padding: 10px 20px 10px 20px;
     height: max-content;
@@ -561,41 +565,41 @@ header .logo:hover {
     color: var(--Other-color);
 }
 
- .buttonContainerRegister .buttonRegisterOff:hover{
+.buttonContainerRegister .buttonRegisterOff:hover {
     cursor: pointer;
 }
 
-.containerRegisterForm .loginButton{
-    font-size:16px;
+.containerRegisterForm .loginButton {
+    font-size: 16px;
     font-weight: 500;
-    
+
 }
 
-.containerRegisterForm .loginButton a{
+.containerRegisterForm .loginButton a {
     text-decoration: none;
     font-size: 16px;
     font-weight: 900;
     color: var(--secondary-color);
 }
 
-.containerRegisterForm .loginButton a:hover{
+.containerRegisterForm .loginButton a:hover {
     color: var(--secondary-color-hover);
 }
 
-.containerRegisterForm .registerGirlPic{
+.containerRegisterForm .registerGirlPic {
     position: absolute;
     top: 50px;
     left: 8px;
     height: 500px;
 }
 
-.containerRegisterForm .registerCatPic{
+.containerRegisterForm .registerCatPic {
     position: absolute;
     top: 44px;
     right: 80px;
     height: 70px;
     display: block;
-    
+
 }
 
 /* footer */
@@ -626,7 +630,7 @@ footer .container1 ul {
 }
 
 footer .container1 ul li {
-    padding: 0 20px 0 20px;    
+    padding: 0 20px 0 20px;
 }
 
 
@@ -643,7 +647,7 @@ footer .container1 ul li a {
     font-size: 14px;
 }
 
-footer .container1 ul li a:hover{
+footer .container1 ul li a:hover {
     color: var(--font-color);
     cursor: pointer;
 }
@@ -682,14 +686,182 @@ path[Attributes Style] {
     font-size: 14px;
 }
 
-.container2 .containerRight{
+.container2 .containerRight {
     color: var(--quinary-color);
     font-size: 14px;
     font-weight: 900;
 }
 
-.container2 .containerRight .language{
+.container2 .containerRight .language {
     display: flex;
     gap: 15px;
     align-items: center;
+}
+
+@media screen and (max-width:838px) {
+    /*Register*/
+
+
+    .formContainer {
+
+        width: 200px;
+        align-items: center;
+
+    }
+
+    .nameAndUser,
+    .emailAndPhone {
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+    .formContainer .nameAndUser input,
+    .formContainer .emailAndPhone input {
+        width: 100%;
+
+    }
+
+    #passwordInputReg {
+        width: 100%;
+    }
+
+    .passwordMessage #hideAndShow {
+        bottom: 60px;
+    }
+
+    #message {
+        width: 150px;
+    }
+
+    .checkBoxContainer {
+        
+        width: 200px;
+    }
+
+    .checkBoxContainer .checkbox-text {
+        text-align: justify;
+
+
+    }
+
+    .checkBoxContainer .custom-checkbox {
+        font-size: 10px;
+
+    }
+
+    .containerRegisterForm .registerGirlPic {
+        display: none;
+    }
+
+    .containerRegisterForm .registerCatPic {
+        display: none;
+    }
+
+    /*Login*/
+
+    .containerLogin {
+
+        max-width: fit-content;
+        min-width: fit-content;
+
+    }
+
+    .loginForm {
+        width: 300px;
+    }
+
+    .containerLogin .loginForm .inputClass {
+        padding: 20px;
+    }
+
+    .containerLogin .loginForm .inputClass .passwordContainer {
+        width: 80%;
+
+    }
+
+    .containerLogin .loginForm .inputClass .passwordContainer input {
+        width: 100%;
+        align-items: center;
+        padding: 0;
+    }
+
+    .containerLogin .loginForm .inputClass input {
+        width: 80%;
+
+    }
+
+    .inputClass .passwordContainer .showed {
+        right: 1px;
+        top: 1px;
+
+    }
+
+    .picture .loginPicture {
+        width: 8rem;
+        bottom: -45px;
+        left: -38vh;
+    }
+
+    .picture .catPicture {
+        top: -10px;
+        left: 150px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    
+
+    /*Login*/
+    .picture {
+        display: none;
+    }
+
+    footer .container1 ul {
+        width: 250px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    footer .container1 ul .midLi {
+        border: none;
+    }
+
+    footer .container2 {
+        width: 250px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .containerLeft {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container2 .containerLeft span {
+        border-left: none;
+    }
+}
+
+@media screen and (max-width:490px){
+    
+    .containerSectionRegister .containerRegisterForm form .formContainer{
+        padding:25px;
+        max-width: fit-content;
+        width: 200px;
+
+    }
+    .passwordMessage{
+        width: 150px;
+    }
+
+    .containerRegisterForm form .textTandC{
+        width: 200px;
+    }
+
 }

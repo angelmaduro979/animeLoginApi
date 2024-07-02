@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link rel="stylesheet" href="/animeDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="containerIndex">
+        <header>
+            <a href="/"><img src="/CrunchyrollLogo.png" class="logo"></a>
+            <div class="userBox">
+                <img src="/slider/logo/header-user-logo.png">
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+
+        </header>
+        <div class="toggleBoxContainer">
+            <ul class="usernameBox">
+                <li class="welcome">
+                    <span><i class="fa-solid fa-crown"></i> Welcome!</span>
+                </li>
+                <li class="logoutIcon"><a href="/logout"><i class="fa-solid fa-right-from-bracket"></i>Log out</a></li>
+
+            </ul>
+        </div>
+        <main class="animeMain">
+            <div class="titleAndImg">
+                <h1>
+                    <%= animeDetails.title %>
+                </h1>
+                <img src="<%= animeDetails.images.jpg.image_url %>" alt="<%= animeDetails.title %>">
+            </div>
+            <div class="contentAnime">
+                <div class="containerSynopsisScore">
+                    <div class="upperContent">
+                        <p class="score">
+                            <span>Score</span>
+                            <%= animeDetails.score %>
+                        </p>
+                        <p class="rank">
+                            <span>Rank</span>
+                            #<%= animeDetails.rank %>
+                        </p>
+                    </div>
+                    <div class="trailer" style="<%= animeDetails.trailer.embed_url ? 'display: flex; flex-direction: column;' : 'display: none;' %>">
+                        <h2>Trailer</h2>
+                        <iframe  src="<%= animeDetails.trailer.embed_url %>" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <p class="synopsis">
+                        <%= animeDetails.synopsis %>
+                    </p>
+                </div>
+
+                <div class="details">
+                    <h2>Details</h2>
+                    <p><strong>Type:</strong>
+                        <%= animeDetails.type %>
+                    </p>
+                    <p><strong>Episodes:</strong>
+                        <%= animeDetails.episodes %>
+                    </p>
+                    <p><strong>Status:</strong>
+                        <%= animeDetails.status %>
+                    </p>
+                    <p><strong>Aired:</strong>
+                        <%= animeDetails.aired.string %>
+                    </p>
+
+                    <p><strong>Popularity:</strong>
+                        <%= animeDetails.popularity %>
+                    </p>
+
+
+                </div>
+            </div>
+        </main>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+        <script src="/animeDetails.js"></script>
+</body>
+
+</html>

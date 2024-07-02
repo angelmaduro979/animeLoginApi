@@ -11,6 +11,10 @@ router.get('/login',controllers.loginGet);
 router.post('/auth',controllers.loginPost);
 
 router.get('/',controllers.getAnimeList);
+router.get('/animeDetails/:id', (req, res, next) => {
+    console.log(`Received request for anime ID: ${req.params.animeId}`);
+    next();
+}, controllers.getAnimeDetail)
 
 router.get('/logout',controllers.logout);
 module.exports=router;

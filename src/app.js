@@ -22,6 +22,11 @@ app.use(session({
     saveUninitialized:true
 }));
 app.use(express.urlencoded({extended:false}));
+app.use((req, res, next) => {
+    console.log(`Request URL: ${req.url}`);
+    console.log(`Request Params: ${JSON.stringify(req.params)}`);
+    next();
+});
 
 //Static files:
 
